@@ -1,0 +1,17 @@
+{
+   "browser_action": {
+      "default_icon": "icon.png",
+      "popup": "popup.html"
+   },
+   "description": "Quick access to 'about:' and 'chrome://' pages.",
+   "icons": {
+      "128": "icon128.png",
+      "48": "icon.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCf5YFeQZ+jfdUSB6J18y4JIynflnPzzCzdTWVoyxNMU47DCetLMLCF2ghd+cR1YQsXWsWg5/8HoCrMHgRN5yYb6uaV3LSEb+LoBBgvJFuXIF8UHp+3UM5ZYcKKvxbFWq4cE87wq8yy8n7J+Vyuob39XB1X6xPDgsTHF0mNaZKOdQIDAQAB",
+   "name": "ChromeAccess",
+   "options_page": "options.html",
+   "permissions": [ "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.6"
+}
