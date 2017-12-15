@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<script>
+		function toBool(str)
+		{
+		   if ("false" === str)
+		      return false;
+		   else 
+		      return str;
+		}
+	
+		// Saves options to localStorage.
+		function save_options() {
+			localStorage["extensions"] = document.getElementById("extensions").checked;
+			localStorage["history"] = document.getElementById("history").checked;
+			localStorage["downloads"] = document.getElementById("downloads").checked;
+			localStorage["bookmarks"] = document.getElementById("bookmarks").checked;
+ 			localStorage["settings"] = document.getElementById("settings").checked;
+						
+			localStorage["network"] = document.getElementById("network").checked;
+			localStorage["memory"] = document.getElementById("memory").checked;
+			localStorage["dns"] = document.getElementById("dns").checked;
+			localStorage["plugins"] = document.getElementById("plugins").checked;
+			localStorage["cache"] = document.getElementById("cache").checked;
+			localStorage["sync"] = document.getElementById("sync").checked;
+			localStorage["histograms"] = document.getElementById("histograms").checked;
+			localStorage["labs"] = document.getElementById("flags").checked;
+			
+			localStorage["about"] = document.getElementById("about").checked;
+			localStorage["version"] = document.getElementById("version").checked;
+			localStorage["credits"] = document.getElementById("credits").checked;
+			
+			// Update status to let user know options were saved.*/
+			var status = document.getElementById("status");
+			status.innerHTML = "Options saved.";
+			setTimeout(function() {
+			  status.innerHTML = "";
+			}, 1000);
+		}
+
+		// Restores select box state to saved value from localStorage.
+		function restore_options() {
+		
+			if (!localStorage["extensions"]) { 	//fresh install, set all values to true
+				localStorage["extensions"] = true;
+				localStorage["history"] =  true;
+				localStorage["downloads"] = true;
+				localStorage["bookmarks"] = true;
+				localStorage["settings"] = true;
+
+				localStorage["network"] = true;
+				localStorage["memory"] = true;
+				localStorage["dns"] = true;
+				localStorage["plugins"] = true;
+				localStorage["cache"] = true;
+				localStorage["sync"] = true;
+				localStorage["histograms"] = true;
+				localStorage["labs"] = true;
+				
+				localStorage["about"] = true;
+				localStorage["version"] = true;
+				localStorage["credits"] = true;
+			}
+		
+			document.getElementById("extensions").checked = toBool(localStorage["extensions"]);
+			document.getElementById("history").checked = toBool(localStorage["history"]);
+			document.getElementById("downloads").checked = toBool(localStorage["downloads"]);
+			document.getElementById("bookmarks").checked = toBool(localStorage["bookmarks"]);
+			document.getElementById("settings").checked = toBool(localStorage["settings"]);
+
+			document.getElementById("network").checked = toBool(localStorage["network"]);
+			document.getElementById("memory").checked = toBool(localStorage["memory"]);
+			document.getElementById("dns").checked = toBool(localStorage["dns"]);
+			document.getElementById("plugins").checked = toBool(localStorage["plugins"]);
+			document.getElementById("cache").checked = toBool(localStorage["cache"]);
+			document.getElementById("sync").checked = toBool(localStorage["sync"]);
+			document.getElementById("histograms").checked = toBool(localStorage["histograms"]);
+			document.getElementById("flags").checked = toBool(localStorage["labs"]);
+			
+			document.getElementById("about").checked = toBool(localStorage["about"]);
+			document.getElementById("version").checked = toBool(localStorage["version"]);
+			document.getElementById("credits").checked = toBool(localStorage["credits"]);
+		}
+	</script>
+	
+	<style>
+		body {
+			background-color: white;
+			font-size:12px;
+			font: bold 12px helvetica, arial, verdana;
+		}
+	
+		i
+		{
+			color:gray;
+		}
+		
+		hr
+		{
+			width: 250 px;
+		}
+
+		input.checkbox {
+			color: blue;
+			padding: 6px;
+			margin-top: 6px;
+			margin-bottom: 6px;
+		}
+		
+		div.info
+		{
+			color: gray;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		
+		div.container
+		{
+			width:300px; margin-left:auto; margin-right: auto;
+			padding: 20px;
+			margin-top:20px;
+			background-color: #EEEEEE;
+			border: 1px solid #CCCCCC;
+		}
+		
+		div.images
+		{
+			text-align:center;
+		}
+		
+		span.status
+		{
+			color: gray;
+			font-size: 10px;
+		}
+	</style>
+	
+	<title>ChromeAccess Options</title>
+
+	</head>
+
+	<body onload="restore_options();">
+		<div class="container">
+			<div class="images"><img src="icon128.png" width="40" height="40" align="center"><img src="chromeaccess.png" align="center"></div>
+			
+			<div class="info">Choose the elements to display in the ChromeAccess menu; checked items will be shown, unchecked items will not be shown.</div>
+		
+			<input id="extensions" type="checkbox" class="checkbox">Extensions</input><br />
+			<input id="history" type="checkbox" class="checkbox">History</input><br />
+			<input id="downloads" type="checkbox" class="checkbox">Downloads</input><br />
+			<input id="bookmarks" type="checkbox" class="checkbox">Bookmarks </input><br />
+			<input id="settings" type="checkbox" class="checkbox">Settings </input><br />
+		<br/>
+			<input id="network" type="checkbox" class="checkbox">Network info</input><br />
+			<input id="memory" type="checkbox" class="checkbox">Memory info</input><br />
+			<input id="dns" type="checkbox" class="checkbox">DNS info</input><br />
+			<input id="plugins" type="checkbox" class="checkbox">Plugin info</input><br />
+			<input id="cache" type="checkbox" class="checkbox">Cache info</input><br />
+			<input id="sync" type="checkbox" class="checkbox">Sync info</input><br />
+			<input id="histograms" type="checkbox" class="checkbox">Histograms</input><br />
+			<input id="flags" type="checkbox" class="checkbox">Flags</input><br />
+		<br/>
+			<input id="about" type="checkbox" class="checkbox">About</input><br />
+			<input id="version" type="checkbox" class="checkbox">Version</input><br />
+			<input id="credits" type="checkbox" class="checkbox">Credits</input><br />
+
+			<input style="margin-top:6px;" type="button" id="restore" value="Save" onclick="save_options();"/> <span id="status" class="status"></span>
+		</div>
+	</body>
+</html>

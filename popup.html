@@ -1,0 +1,222 @@
+<html>
+<head>
+	<script>
+		function toBool(str)
+		{
+		   if ("false" === str)
+		      return false;
+		   else 
+		      return str;
+		}
+	
+		function build_list()
+		{
+			
+			if (!localStorage["extensions"]) { 	//fresh install, set all values to true
+				localStorage["extensions"] = true;
+				localStorage["history"] =  true;
+				localStorage["downloads"] = true;
+				localStorage["bookmarks"] = true;
+				localStorage["settings"] = true;
+
+				localStorage["network"] = true;
+				localStorage["memory"] = true;
+				localStorage["dns"] = true;
+				localStorage["plugins"] = true;
+				localStorage["cache"] = true;
+				localStorage["sync"] = true;
+				localStorage["histograms"] = true;
+				localStorage["labs"] = true;
+
+				localStorage["about"] = true;
+				localStorage["version"] = true;
+				localStorage["credits"] = true;
+			}
+			
+			if (toBool(localStorage["extensions"]))
+				document.getElementById('extensions').style.display = 'block'; 
+			else
+				document.getElementById('extensions').style.display = 'none'; 
+				
+			if (toBool(localStorage["history"]))
+				document.getElementById('history').style.display = 'block'; 
+			else
+				document.getElementById('history').style.display = 'none'; 
+			
+			if (toBool(localStorage["downloads"]))
+				document.getElementById('downloads').style.display = 'block'; 
+			else
+				document.getElementById('downloads').style.display = 'none'; 
+			
+			if (toBool(localStorage["bookmarks"]))
+				document.getElementById('bookmarks').style.display = 'block'; 
+			else
+				document.getElementById('bookmarks').style.display = 'none'; 
+				
+ 			if (toBool(localStorage["settings"]))
+				document.getElementById('settings').style.display = 'block'; 
+			else
+				document.getElementById('settings').style.display = 'none';
+			
+
+
+			if (toBool(localStorage["network"]))
+				document.getElementById('network').style.display = 'block'; 
+			else
+				document.getElementById('network').style.display = 'none'; 
+			
+			if (toBool(localStorage["memory"]))
+				document.getElementById('memory').style.display = 'block'; 
+			else
+				document.getElementById('memory').style.display = 'none'; 
+			
+			if (toBool(localStorage["dns"] ))
+				document.getElementById('dns').style.display = 'block'; 
+			else
+				document.getElementById('dns').style.display = 'none'; 
+			
+			if (toBool(localStorage["plugins"] ))
+				document.getElementById('plugins').style.display = 'block'; 
+			else
+				document.getElementById('plugins').style.display = 'none'; 
+			
+			if (toBool(localStorage["cache"]))
+				document.getElementById('cache').style.display = 'block'; 
+			else
+				document.getElementById('cache').style.display = 'none'; 
+				
+			if (toBool(localStorage["sync"]))
+				document.getElementById('sync').style.display = 'block'; 
+			else
+				document.getElementById('sync').style.display = 'none';
+			
+			if (toBool(localStorage["histograms"]))
+				document.getElementById('histograms').style.display = 'block'; 
+			else
+				document.getElementById('histograms').style.display = 'none'; 
+
+			if (toBool(localStorage["labs"]))
+				document.getElementById('flags').style.display = 'block'; 
+			else
+				document.getElementById('flags').style.display = 'none';	
+				
+			
+			
+			if (toBool(localStorage["about"]))
+				document.getElementById('about').style.display = 'block'; 
+			else
+				document.getElementById('about').style.display = 'none';
+			
+			if (toBool(localStorage["version"] ))
+				document.getElementById('version').style.display = 'block'; 
+			else
+				document.getElementById('version').style.display = 'none'; 
+			
+			if (toBool(localStorage["credits"]))
+				document.getElementById('credits').style.display = 'block'; 
+			else
+				document.getElementById('credits').style.display = 'none';
+			
+			hr_build();
+		}
+		
+		function hr_build()
+		{
+			var blockThree = (toBool(localStorage["version"]) || toBool(localStorage["credits"]) || toBool(localStorage["about"]));
+			var blockOne = (toBool(localStorage["bookmarks"]) || toBool(localStorage["extensions"]) || toBool(localStorage["history"]) || toBool(localStorage["downloads"]) || toBool(localStorage["settings"]));
+			var blockTwo = (toBool(localStorage["network"]) || toBool(localStorage["memory"] ) || toBool(localStorage["dns"]) || toBool(localStorage["cache"]) || toBool(localStorage["plugins"]) || toBool(localStorage["sync"]) || toBool(localStorage["histograms"]) || toBool(localStorage["labs"]));			
+
+
+			if (blockOne && blockTwo && blockThree)
+				return;
+			if (!blockOne && blockTwo && blockThree)
+				document.getElementById('hr1').style.display = 'none';
+			if (!blockOne && !blockTwo && blockThree)
+			{
+				document.getElementById('hr1').style.display = 'none';
+				document.getElementById('hr2').style.display = 'none';
+			}
+			if (blockOne && !blockTwo && blockThree)
+				document.getElementById('hr1').style.display = 'none';
+			if (blockOne && !blockTwo && !blockThree)
+			{
+				document.getElementById('hr1').style.display = 'none';
+				document.getElementById('hr2').style.display = 'none';
+			}
+			if (blockOne && blockTwo && !blockThree)
+				document.getElementById('hr2').style.display = 'none';
+			if (!blockOne && blockTwo && !blockThree)
+			{
+				document.getElementById('hr1').style.display = 'none';
+				document.getElementById('hr2').style.display = 'none';
+			}
+			if (!blockOne && !blockTwo && !blockThree)
+			{
+				document.getElementById('hr1').style.display = 'none';
+				document.getElementById('hr2').style.display = 'none';
+			}	
+		}
+	</script>
+	
+	<style>
+		body {
+			background-color: white;
+			font-size:12px;
+		}
+		
+		i
+		{
+			color:gray;
+		}
+	
+		div.button {
+		color: black;
+		cursor: hand;
+		font: bold 12px helvetica, arial, verdana;
+		width: 250px;
+		padding: 4px;
+		}
+		div.button:last-child {border-bottom-style: none;}
+		div.button:hover {
+			color: blue;
+			background-color: #EEEEEE;
+		}
+			
+		div.left
+		{
+			float:right;
+			font-size: 10px;
+		}
+	</style>	
+	
+	<script>
+		var temp;
+		function openTab(temp)
+		{
+			chrome.tabs.create({url: temp});
+		}
+	</script>
+</head>
+
+<body onload="build_list()">
+	<div id="extensions" class="button" onclick="openTab('chrome://extensions/')"><img src="extensions.png"/> Extensions <div class="left"><i>(chrome://extensions/)</i></div></div>
+	<div id="history" class="button" onclick="openTab('chrome://history/')"><img src="history.png"/> History <div class="left"><i>(chrome://history/)</i></div></div>
+	<div id="downloads" class="button" onclick="openTab('chrome://downloads/')"><img src="downloads.png"/> Downloads <div class="left"><i>(chrome://downloads/)</i></div></div>
+	<div id="bookmarks" class="button" onclick="openTab('chrome://bookmarks/')"><img src="bookmarks.png"/> Bookmarks <div class="left"><i>(chrome://bookmarks/)</i></div></div>
+	<div id="settings" class="button" onclick="openTab('chrome://settings/')"><img src="settings.png"/> Settings <div class="left"><i>(chrome://settings/)</i></div></div>
+	<div id="hr1"><hr/></div>
+	<div id="network" class="button" onclick="openTab('about:net-internals')"><img src="button.png"/> Network info <div class="left"><i>(about:net-internals)</i></div></div>
+	<div id="memory" class="button" onclick="openTab('about:memory')"><img src="button.png"/> Memory info <div class="left"><i>(about:memory)</i></div></div>
+	<div id="dns" class="button" onclick="openTab('about:dns')"><img src="button.png"/> DNS info <div class="left"><i>(about:dns)</i></div></div>
+	<div id="plugins" class="button" onclick="openTab('about:plugins')"><img src="button.png"/> Plugin info <div class="left"><i>(about:plugins)</i></div></div>
+	<div id="cache" class="button" onclick="openTab('about:cache');"><img src="button.png"/> Cache info <div class="left"><i>(about:cache)</i></div></div>
+	<div id="sync" class="button" onclick="openTab('about:sync');"><img src="button.png"/> Sync info <div class="left"><i>(about:sync)</i></div></div>
+	<div id="histograms" class="button" onclick="openTab('about:histograms')"><img src="button.png"/> Histograms <div class="left"><i>(about:histograms)</i></div></div>
+	<div id="flags" class="button" onclick="openTab('about:flags')"><img src="button.png"/> Flags <div class="left"><i>(about:flags)</i></div></div>
+	<div id="hr2"><hr/></div>
+	<div id="about" class="button" onclick="openTab('about:about')"><img src="button.png"/> About <div class="left"><i>(about:about)</i></div></div>
+	<div id="version" class="button" onclick="openTab('about:version')"><img src="button.png"/> Version <div class="left"><i>(about:version)</i></div></div>
+	<div id="credits" class="button" onclick="openTab('about:credits')"><img src="button.png"/> Credits <div class="left"><i>(about:credits)</i></div></div>
+</body>
+
+</html>
