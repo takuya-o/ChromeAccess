@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": {
+      "128": "img/icon128.png",
+      "48": "img/icon.png"
+    },
+    "default_popup": "popup.html",
+    "default_titile": "__MSG_CA2_name__"
+  },
+  "description": "__MSG_CA2_description__",
+  "icons": {
+    "128": "img/icon128.png",
+    "48": "img/icon.png"
+  },
+  "name": "__MSG_CA2_name__",
+  "short_name": "__MSG_CA2_short_name__",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": false
+  },
+  "permissions": [ "tabs" ],
+  "minimum_chrome_version": "40",
+  "default_locale": "en",
+  "author": "Takuya Ono <takuya-o@users.osdn.me>",
+  "version": "2.0.0.0"
+}

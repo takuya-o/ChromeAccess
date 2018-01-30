@@ -1,0 +1,27 @@
+body {
+    background-color: white;
+    font-size:12px;
+}
+
+i {
+    color:gray;
+}
+
+div.button {
+    color: black;
+    cursor: hand;
+    font: bold 12px helvetica, arial, verdana;
+    width: 275px;
+    padding: 4px;
+}
+div.button:last-child {border-bottom-style: none;}
+div.button:hover {
+    color: blue;
+    background-color: #EEEEEE;
+}
+
+div.left
+{
+    float:right;
+    font-size: 10px;
+}

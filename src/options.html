@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/options.css">
+    <title>ChromeAccess2 Options</title>
+    <script type="text/javascript" src="js/options.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="caption">Options</div>
+      <div class="info">
+        Choose the elements to display in the ChromeAccess menu;
+        checked items will be shown, unchecked items will not be
+        shown.
+      </div>
+      <input id="extensions" type="checkbox" class="checkbox">Extensions</input><br />
+      <input id="history" type="checkbox" class="checkbox">History</input><br />
+      <input id="downloads" type="checkbox" class="checkbox">Downloads</input><br />
+      <input id="bookmarks" type="checkbox" class="checkbox">Bookmarks </input><br />
+      <input id="settings" type="checkbox" class="checkbox">Settings </input><br />
+      <br/>
+      <input id="network" type="checkbox" class="checkbox">Network info</input><br />
+      <input id="dns" type="checkbox" class="checkbox">DNS info</input><br />
+      <input id="components" type="checkbox" class="checkbox">Components info</input><br />
+      <input id="cache" type="checkbox" class="checkbox">Cache info</input><br />
+      <input id="sync" type="checkbox" class="checkbox">Sync info</input><br />
+      <input id="histograms" type="checkbox" class="checkbox">Histograms</input><br />
+      <input id="flags" type="checkbox" class="checkbox">Flags</input><br />
+      <br/>
+      <input id="appcache-internals" type="checkbox"
+             class="checkbox">Application Cache info</input><br />
+      <input id="apps" type="checkbox" class="checkbox">Apps</input><br />
+      <br/>
+      <input id="about" type="checkbox" class="checkbox">About</input><br />
+      <input id="version" type="checkbox" class="checkbox">Version</input><br />
+      <input id="credits" type="checkbox" class="checkbox">Credits</input><br />
+
+      <input style="margin-top:6px;" type="button" id="restore" value="Save" />
+      <span id="status" class="status"></span>
+    </div>
+  </body>
+</html>
