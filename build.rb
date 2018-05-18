@@ -6,8 +6,8 @@ require 'crxmake'
 
 CrxMake.zip(
   :ex_dir => "./src",
-  :pkey   => "./ChromeAcess2.pem",
-  :zip_output => "./ChromeAcess2.zip",
+  :pkey   => "./QuickAccess2.pem",
+  :zip_output => "./QuickAccess2.zip",
   :verbose => true,
   :ignorefile => /(\.swp|.*~)/,
   :ignoredir => /\.(?:svn|git|cvs)/

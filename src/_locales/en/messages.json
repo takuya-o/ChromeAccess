@@ -1,9 +1,9 @@
 { "comment_for_emacs":{ "message":"-*- coding: utf-8-unix -*-" },
   "CA2_name":{
-    "message":"ChromeAccess2"
+    "message":"QuickAccess2"
   },
   "CA2_short_name":{
-    "message": "CA2"
+    "message": "QA2"
   },
   "CA2_description":{
     "message":"Quick access to 'about:' and 'chrome://' pages."
